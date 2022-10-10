@@ -13,7 +13,7 @@
 #%%
 # Task 2
 # Write a function to calculate the factorial of a number.
-# The function accepts the number (a non-negative integer)
+# The function accepts the number (a positive integer)
 # as an argument. The computed factorial value should be
 # printed to the console.
 
@@ -26,7 +26,7 @@
 
 #%%
 # Task 3
-# Write a function that returns n-th lowest value of an iterable
+# Write a function that returns the lowest n-th value of an iterable
 # (1st input parameter). The function returns the lowest
 # value if n (2nd input parameter) is non-positive or greater
 # than the number of elements in the iterable.
@@ -35,12 +35,17 @@
 
 
 #%%
-# Test the function
+# Test the function with...
+# ... a sequence of numbers:
 # a = [31, 72, 13, 41, 5, 16, 87, 98, 9]
 # print("3rd lowest in [31, 72, 13, 41, 5, 16, 87, 98, 9]:")
 # print(nth_lowest(a, 3))
+
+# ... a sequence of letters:
 # print("6th lowest in ['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c']:")
 # print(nth_lowest(['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c'], 6))
+
+# ... a string:
 # print("2nd lowest in 'today':")
 # print(nth_lowest('today', 2))
 
@@ -115,8 +120,8 @@
 
 #%%
 # Test the function
-# print("palindrome('madam'):")
-# print(palindrome("madam"))
+# print("palindrome('Madam'):")
+# print(palindrome("Madam"))
 # print("palindrome('nurses run'):")
 # print(palindrome("nurses run"))
 # print("palindrome('nurse run'):")
@@ -125,7 +130,7 @@
 
 #%%
 # Task 8
-# Write a function to play a guessing game: to guess a number between 1 to 9.
+# Write a function to play a guessing game: to guess a number between 1 and 9.
 # Scenario: user is prompted to enter a guess. If the user guesses wrongly,
 # the prompt reappears; the user can try to guess max 3 times;
 # on successful guess, user should get a "Well guessed!" message,
