@@ -7,7 +7,7 @@ def odd_or_even():
     num_str = input("Please enter a number\n")
     num = int(num_str)
     # Option 1:
-    remainder = num % 2
+    # remainder = num % 2
     # Option 2:
     res, remainder = divmod(num, 2)
     if remainder == 0:
@@ -51,10 +51,10 @@ factorial(5)
 # value if n (2nd input parameter) is non-positive or greater
 # than the number of elements in the iterable.
 
-def nth_lowest(iterable, n):
-    if n < 0 or n > len(iterable):
-        return min(iterable)
-    return sorted(iterable)[n-1]
+def nth_lowest(sequence, n):
+    if n < 0 or n > len(sequence):
+        return min(sequence)
+    return sorted(sequence)[n - 1]
 
 #%%
 # Test the function with...
@@ -86,10 +86,14 @@ def list_stats(numbers):
     sum_nneg = 0
     prod_neg = 1
     for num in numbers:
-        if num >= 0: sum_nneg += num
-        else: prod_neg *= num
-        if abs(num) > max_abs: max_abs = abs(num)
-        elif abs(num) < min_abs: min_abs = abs(num)
+        if num >= 0:
+            sum_nneg += num
+        else:
+            prod_neg *= num
+        if abs(num) > max_abs:
+            max_abs = abs(num)
+        elif abs(num) < min_abs:
+            min_abs = abs(num)
     return min_abs, max_abs, sum_nneg, prod_neg
 
 
@@ -110,16 +114,12 @@ print(list_stats([3.4, 5.6, -4.2, -5.6, 9, 1.2, 11.3, -23.45, 81]))
 
 def list_operations(numbers, threshold):
     new_list = list()
-    # Option1:
-    # for num in numbers:
-    #     if (num < threshold) and (num not in new_list):
-    #         new_list.append(num)
-    # Option 2:
-    for num in set(numbers):
-        if num < threshold: new_list.append(num)
+    for num in numbers:
+        if (num < threshold) and (num not in new_list):
+            new_list.append(num)
 
     print(f"The number of elements in the new list: {len(new_list)}")
-    print("New list, sorted in decreasing order:")
+    print("New list, sorted in descending order:")
     for num in sorted(new_list, reverse=True):
         print(num)
 
