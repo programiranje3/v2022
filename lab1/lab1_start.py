@@ -3,23 +3,11 @@
 # Write a function that asks the user for a number, and depending on whether
 # the number is even or odd, prints out an appropriate message.
 
-def odd_or_even():
-    user_input = input("Please enter a number\n")
-    num = int(user_input)
-    res, remainder = divmod(num, 2)
-    if remainder == 0:
-        print("This is an EVEN number")
-    else:
-        print("This is an ODD number")
-    # if num % 2 == 0:
-    #     print("This is an EVEN number")
-    # else:
-    #     print("This is an ODD number")
 
 
 #%%
 # Test the function
-odd_or_even()
+# odd_or_even()
 
 
 #%%
@@ -29,15 +17,11 @@ odd_or_even()
 # as an argument. The computed factorial value should be
 # printed to the console.
 
-def factorial(number):
-    f = 1
-    for x in range(number, 0, -1):
-        f *= x
-    print(f"Factorial of {number} is {f}")
+
 
 #%%
 # Test the function
-factorial(7)
+# factorial(5)
 
 
 #%%
@@ -47,26 +31,23 @@ factorial(7)
 # value if n (2nd input parameter) is non-positive or greater
 # than the number of elements in the iterable.
 
-def nth_lowest(sequence, n):
-    if n < 0 or len(sequence) < n:
-        return min(sequence)
-    return sorted(sequence)[n-1]
+
 
 
 #%%
 # Test the function with...
 # ... a sequence of numbers:
-a = [31, 72, 13, 41, 5, 16, 87, 98, 9]
-print("3rd lowest in [31, 72, 13, 41, 5, 16, 87, 98, 9]:")
-print(nth_lowest(a, 3))
+# a = [31, 72, 13, 41, 5, 16, 87, 98, 9]
+# print("3rd lowest in [31, 72, 13, 41, 5, 16, 87, 98, 9]:")
+# print(nth_lowest(a, 3))
 
 # ... a sequence of letters:
-print("6th lowest in ['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c']:")
-print(nth_lowest(['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c'], 6))
+# print("6th lowest in ['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c']:")
+# print(nth_lowest(['f', 'r', 't', 'a', 'b', 'y', 'j', 'd', 'c'], 6))
 
 # ... a string:
-print("2nd lowest in 'today':")
-print(nth_lowest('today', 2))
+# print("2nd lowest in 'today':")
+# print(nth_lowest('today', 2))
 
 
 #%%
@@ -78,22 +59,7 @@ print(nth_lowest('today', 2))
 # - the sum of all non-negative elements in the list
 # - the product of all negative elements in the list
 
-def list_stats(numbers):
-    min_abs = max_abs = abs(numbers[0])
-    sum_nneg = 0
-    prod_neg = 1
 
-    for n in numbers:
-        if abs(n) < min_abs:
-            min_abs = abs(n)
-        elif abs(n) > max_abs:
-            max_abs = abs(n)
-        if n >= 0:
-            sum_nneg += n
-        else:
-            prod_neg *= n
-
-    return min_abs, max_abs, sum_nneg, prod_neg
 
 
 #%%
@@ -111,19 +77,12 @@ def list_stats(numbers):
 # - sorts the elements in the new list in the descending order,
 #   and prints them, one element per line
 
-def list_operations(numbers, threshold):
-    new_list = []
-    for num in numbers:
-        if num < threshold and (num not in new_list):
-            new_list.append(num)
-    print('Number of elements in the new list:',len(new_list))
-    for num in sorted(new_list,reverse=True):
-        print(num)
+
 
 
 #%%
 # Test the function
-list_operations([1, 1, 2, 3, 5, 8, 13, 5, 21, 34, 55, 89], 20)
+# list_operations([1, 1, 2, 3, 5, 8, 13, 5, 21, 34, 55, 89], 20)
 
 
 #%%
@@ -134,21 +93,19 @@ list_operations([1, 1, 2, 3, 5, 8, 13, 5, 21, 34, 55, 89], 20)
 # letters of a different word or phrase, typically using all the
 # original letters exactly once
 
-def anagrams(s1, s2):
-    s1 = s1.replace(" ", "").lower()
-    s2 = s2.replace(" ", "").lower()
-    return sorted(s1) == sorted(s2)
+
+
 
 #%%
 # Test the function
-print("anagrams('School master', 'The classroom'):")
-print(anagrams('School master', 'The classroom'))
-print("anagrams('Dormitory', 'Dirty room'):")
-print(anagrams('Dormitory', 'Dirty room'))
-print("anagrams('Conversation', 'Voices rant on'):")
-print(anagrams('Conversation', 'Voices rant on'))
-print("anagrams('Bob', 'Bill'):")
-print(anagrams('Bob', 'Bill'))
+# print("anagrams('School master', 'The classroom'):")
+# print(anagrams('School master', 'The classroom'))
+# print("anagrams('Dormitory', 'Dirty room'):")
+# print(anagrams('Dormitory', 'Dirty room'))
+# print("anagrams('Conversation', 'Voices rant on'):")
+# print(anagrams('Conversation', 'Voices rant on'))
+# print("anagrams('Bob', 'Bill'):")
+# print(anagrams('Bob', 'Bill'))
 
 
 #%%
@@ -158,24 +115,17 @@ print(anagrams('Bob', 'Bill'))
 # Note: a palindrome is a word, phrase, or sequence that reads the same
 # backwards as forwards, e.g. "madam" or "nurses run".
 
-#def palindrome(s):
- #   s = s.replace(" ", "").lower()
-  #  return list(s) == list(reversed(s))
-def palindrome(s):
-    s = s.replace(" ", "").lower()
-    for n in range(0,len(s),1):
-        if s[n]!=s[len(s)-n-1]:
-            return False
-    return True
+
+
 
 #%%
 # Test the function
-print("palindrome('Hello'):")
-print(palindrome("Hello"))
-print("palindrome('nurses run'):")
-print(palindrome("nurses run"))
-print("palindrome('nurse run'):")
-print(palindrome("nurse run"))
+# print("palindrome('Madam'):")
+# print(palindrome("Madam"))
+# print("palindrome('nurses run'):")
+# print(palindrome("nurses run"))
+# print("palindrome('nurse run'):")
+# print(palindrome("nurse run"))
 
 
 #%%
@@ -192,10 +142,7 @@ print(palindrome("nurse run"))
 # Hint: use function randint from random package to generate a number to
 # be guessed in the game
 
-from random import randint
 
-def guessing_game():
-    number = randint(1, 9)
 
 
 
