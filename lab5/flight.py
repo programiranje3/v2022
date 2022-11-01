@@ -131,19 +131,10 @@ if __name__ == '__main__':
 
     print()
     print("\nPASSENGERS ON FLIGHT LH1411 (iter / next):")
-    flight_iter = iter(lh1411)
 
-    try:
-        while True:
-            print(next(flight_iter))
-    except StopIteration:
-        print("No more passengers")
 
     print()
-
     print("\nPASSENGERS ON FLIGHT LH1411 (FOR loop):")
-    for passenger in lh1411:
-        print(passenger)
 
 
 
