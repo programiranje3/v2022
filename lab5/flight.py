@@ -87,14 +87,26 @@ class Flight:
 
 
     def time_till_departure(self):
-        pass
+        if self.departure:
+            time_left = self.departure - datetime.now()
+            hours_left, rest_sec = divmod(time_left.seconds, 3600)
+            mins_left, rest_sec = divmod(rest_sec, 60)
+            return time_left.days, hours_left, mins_left
+
+        print("Departure time is still unknown")
+        return None
 
 
     def __iter__(self):
-        pass
+        self.__iter_counter = 0
+        return self
 
     def __next__(self):
-        pass
+        if self.__iter_counter == len(self.passengers):
+            raise StopIteration
+        next_passenger = self.passengers[self.__iter_counter]
+        self.__iter_counter += 1
+        return next_passenger
 
 
 if __name__ == '__main__':
@@ -131,10 +143,19 @@ if __name__ == '__main__':
 
     print()
     print("\nPASSENGERS ON FLIGHT LH1411 (iter / next):")
+    flight_iter = iter(lh1411)
 
+    try:
+        while True:
+            print(next(flight_iter))
+    except StopIteration:
+        print("No more passengers")
 
     print()
+
     print("\nPASSENGERS ON FLIGHT LH1411 (FOR loop):")
+    for passenger in lh1411:
+        print(passenger)
 
 
 
