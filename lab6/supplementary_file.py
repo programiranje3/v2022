@@ -18,7 +18,7 @@ __str__ for the Passenger class
 
 
 """
-# __str__ for the Flight class
+__str__ for the Flight class
 """
 
 # def __str__(self):

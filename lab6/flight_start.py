@@ -57,7 +57,7 @@ Furthermore, the following new methods should be added:
 #%%
 
 from datetime import datetime
-from lab6.passenger import Passenger
+from lab6.passenger_start import Passenger
 
 
 class Flight:
