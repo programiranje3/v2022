@@ -173,7 +173,7 @@ class Flight:
             stderr.write("Error occurred when reading flight-related dictionary data\n")
             keys = {'fl_num', 'departure', 'origin', 'destination', 'operator'}
             missing_keys = keys - set(data_dict.keys())
-            stderr.write(f"Data for the following keys are missing: {', '.join(missing_keys)}\n")
+            stderr.write(f"Error! Data for the following keys are missing: {', '.join(missing_keys)}\n")
             return None
 
 
