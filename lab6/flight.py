@@ -176,7 +176,6 @@ class Flight:
             stderr.write(f"Error! Data for the following keys are missing: {', '.join(missing_keys)}\n")
             return None
 
-
     def not_checkedin_generator(self):
         to_checkin_counter = 0
         for p in self.passengers:
@@ -187,7 +186,6 @@ class Flight:
         msg = "All passengers have checked in" if to_checkin_counter == 0 else \
             f"Waiting for {to_checkin_counter} passengers to check in"
         print(msg)
-
 
     def candidates_for_upgrade_generator(self, min_airfare):
         candidates = []
