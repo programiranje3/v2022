@@ -109,7 +109,7 @@ class Flight:
             import re
             parts = re.split('[,->]', value)
             if len(parts) == 2:
-                self.__route = parts
+                self.__route = tuple(parts)
                 return
 
         stderr.write(f"Invalid input argument ({value}) for the flight's route\n")
@@ -124,7 +124,7 @@ class Flight:
             self.passengers.append(p)
             print(f"Successfully added:\n{p}")
         else:
-            print(f"Error! Passenger {p.name} is already in the passengers list")
+            stderr.write(f"Error! Passenger {p.name} is already in the passengers list\n")
 
     def __str__(self):
         flight_str = f"Data about flight {self.flight_num}:\n"
