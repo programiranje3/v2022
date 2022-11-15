@@ -1,0 +1,11 @@
+foo_123.txt
+list_data
+power.Log
+baz.TXT
+List_items
+Fav_books
+hello.RData
+sample_data.RDS
+loop.GIF
+report_12.log
+data.csv
