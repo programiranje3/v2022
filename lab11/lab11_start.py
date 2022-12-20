@@ -125,10 +125,6 @@ def collect_athletes_data(athletes_url, browser):
     #         not_found.append(name)
     # print('...done')
     #
-    #
-    # for athlete, origin in athletes_dict.items():
-    #     print(f"{athlete}: {origin}")
-    #
     # to_json(Path.cwd() / ORIGINS_JSON_FILE, athletes_dict)
     #
     # print(f"\nInformation about country of origin was not found for the following {len(not_found)} athletes:")
@@ -151,7 +147,7 @@ def create_country_labels_mapping():
                                 'Pennsylvania', 'Ohio', 'Mississippi', 'Alabama', 'Indian Territory', 'Maryland']
     country_lbls_dict['Germany'] = ['West Germany']
     country_lbls_dict['Australia'] = ['Victoria', 'Western Australia', 'New South Wales']
-    country_lbls_dict['UK'] = ['England', 'UK', 'British Leeward Islands', 'United Kingdom']
+    country_lbls_dict['UK'] = ['England', 'UK', 'British Leeward Islands', 'United Kingdom', 'Northern Ireland']
 
     return country_lbls_dict
 
@@ -163,7 +159,6 @@ def most_represented_countries(athletes_dict):
     are represented in the collected athletes data
     :return: nothing
     """
-
 
 
 if __name__ == '__main__':
